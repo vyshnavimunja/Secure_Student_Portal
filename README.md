@@ -28,7 +28,7 @@ Database tables: users, courses, enrollments, announcements, refresh_tokens
 Middleware (Authentication, Security & Communication)
 Implemented in middleware/auth.js and middleware/validate.js, plus third-party Express middleware.
 
-Middleware	Library	What it does
+Middleware	Library.
 JWT Auth	jsonwebtoken	Signs and verifies short-lived access tokens (15 min) and long-lived refresh tokens (7 days) stored in HTTP-only cookies
 Token rotation	custom	On every refresh, the old token is deleted and a new one is issued — stored as a SHA-256 hash in the DB to prevent reuse
 Role guard	custom (requireRole)	Blocks access to admin routes if the logged-in user is not an admin
