@@ -37,3 +37,5 @@ Security headers	helmet	Sets Content-Security-Policy, X-Content-Type-Options, an
 Rate limiting	express-rate-limit	Global: 200 req/15 min per IP. Auth endpoints: 10 req/15 min to prevent brute-force
 CORS	cors	Restricts which origins can call the API
 Password hashing	bcryptjs	All passwords hashed with bcrypt at cost factor 12 before storage — never stored in plain text
+
+
