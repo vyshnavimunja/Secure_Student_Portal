@@ -59,3 +59,6 @@ CORS	cors	Restricts which origins can call the API
 Password hashing	bcryptjs	All passwords hashed with bcrypt at cost factor 12 before storage — never stored in plain text
 
 
+Open the video in the link below to view how the website works.
+https://drive.google.com/file/d/1HzcvESuDRd__l9cJWMFh-rVjieu7hkNS/view?usp=drive_link
+
