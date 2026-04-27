@@ -1,0 +1,73 @@
+Step-by-Step Guide: Download & Run the Project
+Prerequisites — Install These First
+1. Install Git
+•	Download from: https://git-scm.com/download/win
+•	Run the installer with default settings
+•	Verify: open Command Prompt and type git --version
+2. Install Node.js
+•	Download from: https://nodejs.org (choose the LTS version)
+•	Run the installer with default settings
+•	Verify: node --version and npm --version
+3. Install MySQL
+•	Download MySQL Community Server from: https://dev.mysql.com/downloads/mysql/
+•	During setup, set a root password (remember it!)
+•	Also install MySQL Workbench (optional, but helpful for viewing data)
+
+Step 1 — Clone the Repository
+Open Command Prompt and run:
+git clone https://github.com/vyshnavimunja/Secure_Student_Portal.git
+cd Secure_Student_Portal
+
+Step 2 — Install Dependencies
+cd securesp/backend
+npm install
+
+Step 3 — Create the .env File
+Inside the securesp/backend/ folder, create a file named .env (no extension) with this content:
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_mysql_password_here
+DB_NAME=securesp_db
+DB_PORT=3306
+
+JWT_SECRET=any_long_random_string_here
+JWT_REFRESH_SECRET=another_long_random_string_here
+PORT=3000
+Replace your_mysql_password_here with the password you set during MySQL installation.
+
+Step 4 — Create the MySQL Database
+Open MySQL Workbench or MySQL Command Line and run:
+CREATE DATABASE securesp_db;
+The app will automatically create all tables when it first starts.
+
+Step 5 — (Optional) Seed Sample Data
+npm run seed
+This loads sample users and courses into the database so you have data to work with right away.
+
+Step 6 — Start the Server
+npm start
+You should see:
+  Initialising database…
+  Database ready.
+
+  Secure Student Portal
+  URL:  http://localhost:3000
+  Env:  development
+  
+  Run seed: npm run seed
+
+Step 7 — Open the App
+Open your browser and go to:
+http://localhost:3000
+The backend serves both the API and all frontend pages from a single server. There is no separate frontend step.
+
+Quick Troubleshooting
+
+Problem	Fix
+npm: command not found	Node.js not installed — redo Step 2
+Cannot connect to database	MySQL not running, or wrong password in .env
+Port 3000 already in use	Change PORT=3001 in .env
+npm install errors	Delete node_modules folder and run npm install again
+
+That's it! The backend runs at http://localhost:3000 and the frontend is opened directly as an HTML file in your browser.
+
